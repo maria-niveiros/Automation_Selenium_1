@@ -1,0 +1,2008 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">sep. 30, 2022 04:05:16 p. m.</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>sep. 30, 2022 04:05:16 p. m.</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>sep. 30, 2022 04:08:56 p. m.</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>28</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>15</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='65%'>
+<b>28</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='34%'><b>15</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='65%'><b>28</b> events passed</small></div>
+<div>
+<small data-tooltip='34%'><b>15</b> events failed,
+<b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Has_Star_Ratings_Aerolineas Argentinas":0.332,"Has_Star_Ratings_Iphone 13":0.218,"Has_Star_Ratings_Samsung A30":0.333,"Has_Star_Ratings_Notebook Banghó":0.618,"Has_Star_Ratings_Perfumes importados":0.626,"Has_Star_Ratings_Lavarropas Whirpool":0.635,"Has_Star_Ratings_Mochilas escolares":0.768,"Has_Star_Ratings_Repuestos Volkswagen Golf":0.495,"Has_Star_Ratings_Sommier Queen Size":0.219,"Has_Star_Ratings_Vino Catena Zapata":0.723,"Has_Star_Ratings_Zapatillas Nike":0.723,"Has_more_than_5M_results_Aerolineas Argentinas":0.156,"Has_more_than_5M_results_Samsung A30":1.017,"Has_more_than_5M_results_Notebook Banghó":0.358,"Has_more_than_5M_results_Perfumes importados":0.813,"Has_more_than_5M_results_Lavarropas Whirpool":0.319,"Has_more_than_5M_results_Mochilas escolares":0.18,"Has_more_than_5M_results_Repuestos Volkswagen Golf":0.94,"Has_more_than_5M_results_Sommier Queen Size":0.63,"Has_more_than_5M_results_Vino Catena Zapata":0.431,"Has_more_than_5M_results_Zapatillas Nike":0.224,"MercadolibreLink_Aerolineas Argentinas":1.745,"MercadolibreLink_Iphone 13":1.126,"MercadolibreLink_Samsung A30":0.575,"MercadolibreLink_Notebook Banghó":0.388,"MercadolibreLink_Perfumes importados":0.259,"MercadolibreLink_Lavarropas Whirpool":0.192,"MercadolibreLink_Mochilas escolares":0.282,"MercadolibreLink_Repuestos Volkswagen Golf":0.714,"MercadolibreLink_Sommier Queen Size":0.195,"MercadolibreLink_Vino Catena Zapata":0.576,"MercadolibreLink_Zapatillas Nike":0.419,"PageTitle_Aerolineas Argentinas":0.568,"PageTitle_Iphone 13":0.813,"PageTitle_Samsung A30":0.935,"PageTitle_Notebook Banghó":0.309,"PageTitle_Perfumes importados":0.687,"PageTitle_Lavarropas Whirpool":0.4,"PageTitle_Mochilas escolares":0.765,"PageTitle_Repuestos Volkswagen Golf":0.374,"PageTitle_Sommier Queen Size":0.465,"PageTitle_Vino Catena Zapata":0.55,"PageTitle_Zapatillas Nike":0.188
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>Selenium Version</td>
+<td>4.1.4</td>
+</tr>
+<tr>
+<td>JUnit Version</td>
+<td>5.9.1</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 28,
+failParent: 15,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 28,
+failEvents: 15,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 0
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Aerolineas Argentinas</p>
+            <p class="text-sm">
+              <span>16:05:24</span> / <span>00:00:00:332</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Aerolineas Argentinas</h5>
+<span class='badge badge-success'>09.30.2022 16:05:24</span>
+<span class='badge badge-danger'>09.30.2022 16:05:24</span>
+<span class='badge badge-default'>00:00:00:332</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:05:24</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Aerolineas Argentinas20220930040524.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Aerolineas Argentinas20220930040524.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Iphone 13</p>
+            <p class="text-sm">
+              <span>16:05:31</span> / <span>00:00:00:218</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Has_Star_Ratings_Iphone 13</h5>
+<span class='badge badge-success'>09.30.2022 16:05:31</span>
+<span class='badge badge-danger'>09.30.2022 16:05:31</span>
+<span class='badge badge-default'>00:00:00:218</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:05:31</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Samsung A30</p>
+            <p class="text-sm">
+              <span>16:05:37</span> / <span>00:00:00:333</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Has_Star_Ratings_Samsung A30</h5>
+<span class='badge badge-success'>09.30.2022 16:05:37</span>
+<span class='badge badge-danger'>09.30.2022 16:05:38</span>
+<span class='badge badge-default'>00:00:00:333</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:05:38</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Notebook Banghó</p>
+            <p class="text-sm">
+              <span>16:05:41</span> / <span>00:00:00:618</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Notebook Banghó</h5>
+<span class='badge badge-success'>09.30.2022 16:05:41</span>
+<span class='badge badge-danger'>09.30.2022 16:05:42</span>
+<span class='badge badge-default'>00:00:00:618</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:05:42</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Notebook Banghó20220930040541.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Notebook Banghó20220930040541.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Perfumes importados</p>
+            <p class="text-sm">
+              <span>16:05:45</span> / <span>00:00:00:626</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Perfumes importados</h5>
+<span class='badge badge-success'>09.30.2022 16:05:45</span>
+<span class='badge badge-danger'>09.30.2022 16:05:46</span>
+<span class='badge badge-default'>00:00:00:626</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:05:46</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Perfumes importados20220930040545.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Perfumes importados20220930040545.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Lavarropas Whirpool</p>
+            <p class="text-sm">
+              <span>16:05:51</span> / <span>00:00:00:635</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Lavarropas Whirpool</h5>
+<span class='badge badge-success'>09.30.2022 16:05:51</span>
+<span class='badge badge-danger'>09.30.2022 16:05:51</span>
+<span class='badge badge-default'>00:00:00:635</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:05:51</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Lavarropas Whirpool20220930040551.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Lavarropas Whirpool20220930040551.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Mochilas escolares</p>
+            <p class="text-sm">
+              <span>16:05:56</span> / <span>00:00:00:768</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Mochilas escolares</h5>
+<span class='badge badge-success'>09.30.2022 16:05:56</span>
+<span class='badge badge-danger'>09.30.2022 16:05:56</span>
+<span class='badge badge-default'>00:00:00:768</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:05:56</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Mochilas escolares20220930040556.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Mochilas escolares20220930040556.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Repuestos Volkswagen Golf</p>
+            <p class="text-sm">
+              <span>16:06:00</span> / <span>00:00:00:495</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Repuestos Volkswagen Golf</h5>
+<span class='badge badge-success'>09.30.2022 16:06:00</span>
+<span class='badge badge-danger'>09.30.2022 16:06:01</span>
+<span class='badge badge-default'>00:00:00:495</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:06:01</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Repuestos Volkswagen Golf20220930040600.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Repuestos Volkswagen Golf20220930040600.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Sommier Queen Size</p>
+            <p class="text-sm">
+              <span>16:06:06</span> / <span>00:00:00:219</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Sommier Queen Size</h5>
+<span class='badge badge-success'>09.30.2022 16:06:06</span>
+<span class='badge badge-danger'>09.30.2022 16:06:06</span>
+<span class='badge badge-default'>00:00:00:219</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:06:06</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Sommier Queen Size20220930040606.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Sommier Queen Size20220930040606.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Vino Catena Zapata</p>
+            <p class="text-sm">
+              <span>16:06:09</span> / <span>00:00:00:723</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Vino Catena Zapata</h5>
+<span class='badge badge-success'>09.30.2022 16:06:09</span>
+<span class='badge badge-danger'>09.30.2022 16:06:10</span>
+<span class='badge badge-default'>00:00:00:723</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:06:10</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Vino Catena Zapata20220930040609.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Vino Catena Zapata20220930040609.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_Star_Ratings_Zapatillas Nike</p>
+            <p class="text-sm">
+              <span>16:06:14</span> / <span>00:00:00:723</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_Star_Ratings_Zapatillas Nike</h5>
+<span class='badge badge-success'>09.30.2022 16:06:14</span>
+<span class='badge badge-danger'>09.30.2022 16:06:15</span>
+<span class='badge badge-default'>00:00:00:723</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:06:15</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_Star_Ratings_Zapatillas Nike20220930040614.jpeg' src="./FailedTestsScreenshots/Has_Star_Ratings_Zapatillas Nike20220930040614.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Aerolineas Argentinas</p>
+            <p class="text-sm">
+              <span>16:06:22</span> / <span>00:00:00:156</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Has_more_than_5M_results_Aerolineas Argentinas</h5>
+<span class='badge badge-success'>09.30.2022 16:06:22</span>
+<span class='badge badge-danger'>09.30.2022 16:06:22</span>
+<span class='badge badge-default'>00:00:00:156</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:06:22</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Samsung A30</p>
+            <p class="text-sm">
+              <span>16:06:25</span> / <span>00:00:01:017</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Has_more_than_5M_results_Samsung A30</h5>
+<span class='badge badge-success'>09.30.2022 16:06:25</span>
+<span class='badge badge-danger'>09.30.2022 16:06:26</span>
+<span class='badge badge-default'>00:00:01:017</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:06:26</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Notebook Banghó</p>
+            <p class="text-sm">
+              <span>16:06:32</span> / <span>00:00:00:358</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_more_than_5M_results_Notebook Banghó</h5>
+<span class='badge badge-success'>09.30.2022 16:06:32</span>
+<span class='badge badge-danger'>09.30.2022 16:06:32</span>
+<span class='badge badge-default'>00:00:00:358</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:06:32</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_more_than_5M_results_Notebook Banghó20220930040632.jpeg' src="./FailedTestsScreenshots/Has_more_than_5M_results_Notebook Banghó20220930040632.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Perfumes importados</p>
+            <p class="text-sm">
+              <span>16:06:35</span> / <span>00:00:00:813</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Has_more_than_5M_results_Perfumes importados</h5>
+<span class='badge badge-success'>09.30.2022 16:06:35</span>
+<span class='badge badge-danger'>09.30.2022 16:06:36</span>
+<span class='badge badge-default'>00:00:00:813</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:06:36</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Lavarropas Whirpool</p>
+            <p class="text-sm">
+              <span>16:06:41</span> / <span>00:00:00:319</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_more_than_5M_results_Lavarropas Whirpool</h5>
+<span class='badge badge-success'>09.30.2022 16:06:41</span>
+<span class='badge badge-danger'>09.30.2022 16:06:41</span>
+<span class='badge badge-default'>00:00:00:319</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:06:41</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_more_than_5M_results_Lavarropas Whirpool20220930040641.jpeg' src="./FailedTestsScreenshots/Has_more_than_5M_results_Lavarropas Whirpool20220930040641.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Mochilas escolares</p>
+            <p class="text-sm">
+              <span>16:06:47</span> / <span>00:00:00:180</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Has_more_than_5M_results_Mochilas escolares</h5>
+<span class='badge badge-success'>09.30.2022 16:06:47</span>
+<span class='badge badge-danger'>09.30.2022 16:06:47</span>
+<span class='badge badge-default'>00:00:00:180</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:06:47</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Repuestos Volkswagen Golf</p>
+            <p class="text-sm">
+              <span>16:06:51</span> / <span>00:00:00:940</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_more_than_5M_results_Repuestos Volkswagen Golf</h5>
+<span class='badge badge-success'>09.30.2022 16:06:51</span>
+<span class='badge badge-danger'>09.30.2022 16:06:52</span>
+<span class='badge badge-default'>00:00:00:940</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:06:52</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_more_than_5M_results_Repuestos Volkswagen Golf20220930040651.jpeg' src="./FailedTestsScreenshots/Has_more_than_5M_results_Repuestos Volkswagen Golf20220930040651.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Sommier Queen Size</p>
+            <p class="text-sm">
+              <span>16:06:57</span> / <span>00:00:00:630</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_more_than_5M_results_Sommier Queen Size</h5>
+<span class='badge badge-success'>09.30.2022 16:06:57</span>
+<span class='badge badge-danger'>09.30.2022 16:06:58</span>
+<span class='badge badge-default'>00:00:00:630</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:06:58</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_more_than_5M_results_Sommier Queen Size20220930040657.jpeg' src="./FailedTestsScreenshots/Has_more_than_5M_results_Sommier Queen Size20220930040657.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Vino Catena Zapata</p>
+            <p class="text-sm">
+              <span>16:07:02</span> / <span>00:00:00:431</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Has_more_than_5M_results_Vino Catena Zapata</h5>
+<span class='badge badge-success'>09.30.2022 16:07:02</span>
+<span class='badge badge-danger'>09.30.2022 16:07:02</span>
+<span class='badge badge-default'>00:00:00:431</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:07:02</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/Has_more_than_5M_results_Vino Catena Zapata20220930040702.jpeg' src="./FailedTestsScreenshots/Has_more_than_5M_results_Vino Catena Zapata20220930040702.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Has_more_than_5M_results_Zapatillas Nike</p>
+            <p class="text-sm">
+              <span>16:07:07</span> / <span>00:00:00:224</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Has_more_than_5M_results_Zapatillas Nike</h5>
+<span class='badge badge-success'>09.30.2022 16:07:07</span>
+<span class='badge badge-danger'>09.30.2022 16:07:08</span>
+<span class='badge badge-default'>00:00:00:224</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:08</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Aerolineas Argentinas</p>
+            <p class="text-sm">
+              <span>16:07:13</span> / <span>00:00:01:745</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">MercadolibreLink_Aerolineas Argentinas</h5>
+<span class='badge badge-success'>09.30.2022 16:07:13</span>
+<span class='badge badge-danger'>09.30.2022 16:07:14</span>
+<span class='badge badge-default'>00:00:01:745</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>16:07:14</td>
+        <td>
+          Test failed. See screenshot for details
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./FailedTestsScreenshots/MercadolibreLink_Aerolineas Argentinas20220930040713.jpeg' src="./FailedTestsScreenshots/MercadolibreLink_Aerolineas Argentinas20220930040713.jpeg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Iphone 13</p>
+            <p class="text-sm">
+              <span>16:07:22</span> / <span>00:00:01:126</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Iphone 13</h5>
+<span class='badge badge-success'>09.30.2022 16:07:22</span>
+<span class='badge badge-danger'>09.30.2022 16:07:23</span>
+<span class='badge badge-default'>00:00:01:126</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:23</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Samsung A30</p>
+            <p class="text-sm">
+              <span>16:07:28</span> / <span>00:00:00:575</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Samsung A30</h5>
+<span class='badge badge-success'>09.30.2022 16:07:28</span>
+<span class='badge badge-danger'>09.30.2022 16:07:29</span>
+<span class='badge badge-default'>00:00:00:575</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:29</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Notebook Banghó</p>
+            <p class="text-sm">
+              <span>16:07:33</span> / <span>00:00:00:388</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Notebook Banghó</h5>
+<span class='badge badge-success'>09.30.2022 16:07:33</span>
+<span class='badge badge-danger'>09.30.2022 16:07:33</span>
+<span class='badge badge-default'>00:00:00:388</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:33</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="26"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Perfumes importados</p>
+            <p class="text-sm">
+              <span>16:07:39</span> / <span>00:00:00:259</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Perfumes importados</h5>
+<span class='badge badge-success'>09.30.2022 16:07:39</span>
+<span class='badge badge-danger'>09.30.2022 16:07:39</span>
+<span class='badge badge-default'>00:00:00:259</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:39</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Lavarropas Whirpool</p>
+            <p class="text-sm">
+              <span>16:07:43</span> / <span>00:00:00:192</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Lavarropas Whirpool</h5>
+<span class='badge badge-success'>09.30.2022 16:07:43</span>
+<span class='badge badge-danger'>09.30.2022 16:07:43</span>
+<span class='badge badge-default'>00:00:00:192</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:43</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="28"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Mochilas escolares</p>
+            <p class="text-sm">
+              <span>16:07:48</span> / <span>00:00:00:282</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Mochilas escolares</h5>
+<span class='badge badge-success'>09.30.2022 16:07:48</span>
+<span class='badge badge-danger'>09.30.2022 16:07:48</span>
+<span class='badge badge-default'>00:00:00:282</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:48</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="29"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Repuestos Volkswagen Golf</p>
+            <p class="text-sm">
+              <span>16:07:52</span> / <span>00:00:00:714</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Repuestos Volkswagen Golf</h5>
+<span class='badge badge-success'>09.30.2022 16:07:52</span>
+<span class='badge badge-danger'>09.30.2022 16:07:53</span>
+<span class='badge badge-default'>00:00:00:714</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:53</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="30"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Sommier Queen Size</p>
+            <p class="text-sm">
+              <span>16:07:58</span> / <span>00:00:00:195</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Sommier Queen Size</h5>
+<span class='badge badge-success'>09.30.2022 16:07:58</span>
+<span class='badge badge-danger'>09.30.2022 16:07:59</span>
+<span class='badge badge-default'>00:00:00:195</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:07:59</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="31"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Vino Catena Zapata</p>
+            <p class="text-sm">
+              <span>16:08:02</span> / <span>00:00:00:576</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Vino Catena Zapata</h5>
+<span class='badge badge-success'>09.30.2022 16:08:02</span>
+<span class='badge badge-danger'>09.30.2022 16:08:03</span>
+<span class='badge badge-default'>00:00:00:576</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:03</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="32"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MercadolibreLink_Zapatillas Nike</p>
+            <p class="text-sm">
+              <span>16:08:07</span> / <span>00:00:00:419</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MercadolibreLink_Zapatillas Nike</h5>
+<span class='badge badge-success'>09.30.2022 16:08:07</span>
+<span class='badge badge-danger'>09.30.2022 16:08:07</span>
+<span class='badge badge-default'>00:00:00:419</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:07</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="33"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Aerolineas Argentinas</p>
+            <p class="text-sm">
+              <span>16:08:13</span> / <span>00:00:00:568</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Aerolineas Argentinas</h5>
+<span class='badge badge-success'>09.30.2022 16:08:13</span>
+<span class='badge badge-danger'>09.30.2022 16:08:13</span>
+<span class='badge badge-default'>00:00:00:568</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:13</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Iphone 13</p>
+            <p class="text-sm">
+              <span>16:08:17</span> / <span>00:00:00:813</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Iphone 13</h5>
+<span class='badge badge-success'>09.30.2022 16:08:17</span>
+<span class='badge badge-danger'>09.30.2022 16:08:18</span>
+<span class='badge badge-default'>00:00:00:813</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:18</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="35"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Samsung A30</p>
+            <p class="text-sm">
+              <span>16:08:22</span> / <span>00:00:00:935</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Samsung A30</h5>
+<span class='badge badge-success'>09.30.2022 16:08:22</span>
+<span class='badge badge-danger'>09.30.2022 16:08:23</span>
+<span class='badge badge-default'>00:00:00:935</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:23</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="36"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Notebook Banghó</p>
+            <p class="text-sm">
+              <span>16:08:28</span> / <span>00:00:00:309</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Notebook Banghó</h5>
+<span class='badge badge-success'>09.30.2022 16:08:28</span>
+<span class='badge badge-danger'>09.30.2022 16:08:28</span>
+<span class='badge badge-default'>00:00:00:309</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=36</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:28</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="37"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Perfumes importados</p>
+            <p class="text-sm">
+              <span>16:08:31</span> / <span>00:00:00:687</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Perfumes importados</h5>
+<span class='badge badge-success'>09.30.2022 16:08:31</span>
+<span class='badge badge-danger'>09.30.2022 16:08:32</span>
+<span class='badge badge-default'>00:00:00:687</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:32</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="38"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Lavarropas Whirpool</p>
+            <p class="text-sm">
+              <span>16:08:35</span> / <span>00:00:00:400</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Lavarropas Whirpool</h5>
+<span class='badge badge-success'>09.30.2022 16:08:35</span>
+<span class='badge badge-danger'>09.30.2022 16:08:35</span>
+<span class='badge badge-default'>00:00:00:400</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=38</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:35</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="39"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Mochilas escolares</p>
+            <p class="text-sm">
+              <span>16:08:38</span> / <span>00:00:00:765</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Mochilas escolares</h5>
+<span class='badge badge-success'>09.30.2022 16:08:38</span>
+<span class='badge badge-danger'>09.30.2022 16:08:39</span>
+<span class='badge badge-default'>00:00:00:765</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:39</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="40"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Repuestos Volkswagen Golf</p>
+            <p class="text-sm">
+              <span>16:08:42</span> / <span>00:00:00:374</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Repuestos Volkswagen Golf</h5>
+<span class='badge badge-success'>09.30.2022 16:08:42</span>
+<span class='badge badge-danger'>09.30.2022 16:08:43</span>
+<span class='badge badge-default'>00:00:00:374</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:43</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="41"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Sommier Queen Size</p>
+            <p class="text-sm">
+              <span>16:08:45</span> / <span>00:00:00:465</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Sommier Queen Size</h5>
+<span class='badge badge-success'>09.30.2022 16:08:45</span>
+<span class='badge badge-danger'>09.30.2022 16:08:45</span>
+<span class='badge badge-default'>00:00:00:465</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=41</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:45</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="42"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Vino Catena Zapata</p>
+            <p class="text-sm">
+              <span>16:08:48</span> / <span>00:00:00:550</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Vino Catena Zapata</h5>
+<span class='badge badge-success'>09.30.2022 16:08:48</span>
+<span class='badge badge-danger'>09.30.2022 16:08:49</span>
+<span class='badge badge-default'>00:00:00:550</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=42</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:49</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="43"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PageTitle_Zapatillas Nike</p>
+            <p class="text-sm">
+              <span>16:08:53</span> / <span>00:00:00:188</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PageTitle_Zapatillas Nike</h5>
+<span class='badge badge-success'>09.30.2022 16:08:53</span>
+<span class='badge badge-danger'>09.30.2022 16:08:53</span>
+<span class='badge badge-default'>00:00:00:188</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=43</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>16:08:53</td>
+        <td>
+          Test passed as expected
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
